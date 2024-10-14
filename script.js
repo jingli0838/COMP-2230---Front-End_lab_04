@@ -22,11 +22,8 @@ formNode.addEventListener("submit",(event) => {
 
     event.preventDefault();
 
-
-    nameErrorMessage = "";
-    emailErrorMessage = "";
-    ageErrorMessage = "";
-    phoneErrorMessage = "";
+    // remove the existing warning messages
+    document.querySelectorAll(".warning-message").forEach((warning) => warning.remove());
 
     const validationName = validateUserName();
     if(!validationName){ 
@@ -47,25 +44,15 @@ formNode.addEventListener("submit",(event) => {
     if(!validatePhone){
         showInputError(inputGroupPhoneNode, phoneErrorMessage)
     }
-    emailInputNode.value ="";
-    userNameNode.value ="";
-    ageInputNode.value ="";
-    phoneNumberNode.value ="";
+
 });
 
 function showInputError(inputElement, message) {
   
     const warningMessageNode = document.createElement("p");
     warningMessageNode.className = "warning-message";
-
-    // remove old error message
-    const exsitingWarningMessage = inputElement.querySelector(".warning-message");
-   
-    if(exsitingWarningMessage){
-        inputElement.removeChild(exsitingWarningMessage);
-    }
-
     
+    // add message to html
     warningMessageNode.innerText = message;
     warningMessageNode.setAttribute("role", "alert");
     inputElement.appendChild(warningMessageNode);
@@ -74,7 +61,7 @@ function showInputError(inputElement, message) {
 
 
 
-
+// function to validate user name
 function validateUserName(){
     const userName = escapeHTML(userNameNode.value);
     console.log(userName);
