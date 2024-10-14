@@ -54,7 +54,7 @@ button:hover {
 }
 
 .input-group-name, .input-group-age, .input-group-email, .input-group-phone{
-    height: 150px;
+    height: 100px;
 }
 
 p{

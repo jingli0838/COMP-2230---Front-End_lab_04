@@ -76,7 +76,7 @@ function showInputError(inputElement, message) {
 
 
 function validateUserName(){
-    const userName = escapeHTML(document.getElementById("userName").value);
+    const userName = escapeHTML(userNameNode.value);
     console.log(userName);
     if (userName === ""){
         nameErrorMessage = ("Username must be entered.");
@@ -91,7 +91,7 @@ function validateUserName(){
 
 //Function to validate user age
 function validateUserAge(){
-    const userAge = document.getElementById("userAge").value;
+    const userAge = ageInputNode.value;
     console.log(userAge);
     if(userAge.length == ""){
         ageErrorMessage = "Age must be required";
@@ -113,7 +113,7 @@ function validateUserAge(){
 
 //Function to validate user Email
 function validateUserEmail(){
-    const email = document.getElementById("userEmail").value;
+    const email = emailInputNode.value;
     const emailPattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
     if(email.length === 0){
         emailErrorMessage ="Email must be required";
@@ -127,7 +127,7 @@ function validateUserEmail(){
 
 //Function to validate Phone Number
 function validPhoneNumber(){
-    const phoneNumber = document.getElementById("phoneNumber").value;
+    const phoneNumber = phoneNumberNode.value;
     const phoneNumberPattern = /^[0-9]{10}$/;
     if(phoneNumber.length === 0){
         phoneErrorMessage = "Phone number must be required.";
